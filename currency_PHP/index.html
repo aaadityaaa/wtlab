@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+</head>
+<body>
+
+<h2>Currency Converter</h2>
+
+<form method="post" action="">
+    <label for="amount">Enter Amount:</label>
+    <input type="text" name="amount" required>
+    <br>
+    <label for="rate">Enter Conversion Rate:</label>
+    <input type="text" name="rate" required>
+    <br>
+    <input type="submit" value="Convert">
+</form>
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Get input values
+    $amount = $_POST["amount"];
+    $rate = $_POST["rate"];
+
+    // Check if the inputs are numeric
+    if (!is_numeric($amount) || !is_numeric($rate)) {
+        echo "<p>Please enter valid numeric values.</p>";
+    } else {
+        // Perform conversion
+        $result = $amount * $rate;
+
+        // Display the result
+        echo "<p>$amount units at a conversion rate of $rate is equal to $result units.</p>";
+    }
+}
+?>
+
+</body>
+</html>
