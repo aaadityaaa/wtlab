@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chessboard</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .chessboard {
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            width: 80vmin;
+            height: 80vmin;
+        }
+
+        .square {
+            width: 100%;
+            padding-bottom: 100%; /* Maintain a square aspect ratio */
+            box-sizing: border-box;
+        }
+
+        .white {
+            background-color: #fcfcfc;
+        }
+
+        .black {
+            background-color: #222121;
+        }
+    </style>
+</head>
+<body>
+
+<div class="chessboard" id="chessboard"></div>
+
+<script>
+    // Create the chessboard
+    const chessboard = document.getElementById("chessboard");
+    for (let row = 0; row < 8; row++) {
+        for (let col = 0; col < 8; col++) {
+            const square = document.createElement("div");
+            square.className = "square";
+            square.classList.add((row + col) % 2 === 0 ? "white" : "black");
+            chessboard.appendChild(square);
+        }
+    }
+</script>
+
+</body>
+</html>
+
+
+
+
+<!-- In the provided example, the responsiveness is achieved through the use of relative units and a flexible grid layout. Let's break down the key aspects that make this chessboard responsive:
+
+1. **Viewport Units (`vmin`):**
+   - The `width` and `height` of the chessboard are set using viewport units (`vmin`). Viewport units are relative to the smaller of the viewport's height or width, making them suitable for creating a responsive design.
+
+2. **CSS Grid Layout:**
+   - The chessboard is created using the CSS Grid layout (`display: grid`). This allows for a flexible grid with rows and columns, and the `repeat(8, 1fr)` ensures that there are 8 equal-sized columns.
+
+3. **Square Aspect Ratio:**
+   - Each square is given a `padding-bottom` of `100%` to maintain a square aspect ratio. This ensures that each square is a perfect square regardless of the screen size.
+
+4. **Flex Container for Centering:**
+   - The `body` is set as a flex container (`display: flex`) with `justify-content` and `align-items` set to `center`. This centers the chessboard both horizontally and vertically within the viewport.
+
+5. **Responsive Font Sizes (Optional):**
+   - In a fully responsive design, you might consider using relative font sizes (e.g., `em`, `rem`) to ensure that text scales appropriately with the viewport size. In this example, there is no text, but if you add any, consider using relative font sizes.
+
+These design choices ensure that the chessboard adapts to different screen sizes and maintains a visually appealing layout on various devices. The use of relative units and flexible layout techniques allows the content to scale based on the dimensions of the viewport. -->
