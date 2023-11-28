@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let companies = `
+        [
+            {
+                "name": "My big company",
+                "rating": 5,
+                "ceo" : "Mr Aaditua",
+                "noOfEmployees": 1000
+            },
+            {
+                "name": "My small company",
+                "rating": 3,
+                "ceo": null,
+                "noOfEmployees": 2
+            }
+        ]
+        `
+        console.log(companies)
+        console.log(JSON.parse(companies))
+        console.log(JSON.parse(companies)[0].name)
+        //usually we get a json object in a string format, not in a json format, so we need to parse it to a json format. 
+    </script>
+</body>
+</html>
