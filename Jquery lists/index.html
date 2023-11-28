@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Copy and Insert</title>
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <style>
+        /* Just for styling */
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 5px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<h2>List 1</h2>
+<ul id="list1">
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+</ul>
+
+<button id="copyButton">Copy to List 2</button>
+
+<h2>List 2</h2>
+<ul id="list2"></ul>
+
+<script>
+    $(document).ready(function () {
+        // Copy content from List 1 to List 2
+        $("#copyButton").click(function () {
+            $("#list1 li").each(function () {
+                // Clone the li element and append it to List 2
+                $("#list2").append($(this).clone());
+            });
+        });
+
+        // Insert new elements into the HTML page
+        $("<p>New paragraph inserted using jQuery!</p>").insertAfter("#copyButton");
+        $("<h3>New heading inserted using jQuery!</h3>").insertBefore("#list1");
+    });
+</script>
+
+</body>
+</html>
