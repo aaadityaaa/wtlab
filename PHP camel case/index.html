@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String to Camel Case Converter</title>
+</head>
+<body>
+
+<h2>String to Camel Case Converter</h2>
+
+<form method="post" action="">
+    <label for="inputString">Enter a string:</label>
+    <input type="text" id="inputString" name="inputString" required>
+    <input type="submit" value="Convert to Camel Case">
+</form>
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Get the input string from the form
+    $inputString = $_POST["inputString"];
+
+    // Convert the string to camel case
+    $camelCaseString = convertToCamelCase($inputString);
+
+    // Display the result
+    echo "<p>Original String: $inputString</p>";
+    echo "<p>Camel Case: $camelCaseString</p>";
+}
+
+function convertToCamelCase($inputString) {
+    // Remove spaces and make the first letter of each word uppercase
+    $words = explode(' ', ucwords($inputString));
+
+    // Combine the words and make the first letter lowercase
+    $camelCaseString = lcfirst(implode('', $words));
+
+    return $camelCaseString;
+}
+?>
+</body>
+</html>
