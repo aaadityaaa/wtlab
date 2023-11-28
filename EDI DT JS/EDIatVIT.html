@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset = "UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>EDI at VIT</title>
+        <style>
+            *{
+                margin:0;
+                padding:0;
+            }
+            nav{
+                position: sticky;
+                padding: 50px;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+            ul{
+                margin-left: 50px;
+                display: flex;
+                list-style: none;
+                padding: 0;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+            .tab{
+                cursor: pointer;
+                padding: 10px 20px;
+                background-color: #eee;
+                border: 1px solid #ccc;
+                border-radius: 5px 5px 0 0;
+                margin-right: 5px;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+            .active-tab{
+                background-color:aquamarine;
+                border-bottom: 1px solid white;
+            }
+            .tab-content{
+                margin-left: 50px;
+                max-width: 90%;
+                display: none;
+                padding: 20px;
+                border: 1px solid #ccc;
+                border-radius: 0 0 5px 5px;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+            .tab-content-active{
+                display: block;
+            }
+        </style>
+    </head>
+    <body>
+        <nav>
+            <h1>Importance of Projects at VIT</h1>
+        </nav>
+        <ul>
+            <li class="tab" data-gram="edi">EDI</li>
+            <li class="tab" data-gram="spd">Software Development Project</li>
+            <li class="tab" data-gram="cp">Course Project</li>
+            <li class="tab" data-gram="viva">Viva</li>
+        </ul>
+
+        <div class="tab-content" data-gram="edi">
+            <h1>EDI at VIT</h1>
+            <p>why is EDI important</p>
+        </div>
+        <div class="tab-content" data-gram="spd">
+            <h1>Software Development Project at VIT</h1>
+            <p>why is SDP important</p>
+        </div>
+        <div class="tab-content" data-gram="cp">
+            <h1>Course Project at VIT</h1>
+            <p>Why is CP important</p>
+        </div>
+        <div class="tab-content" data-gram="viva">
+            <h1>Viva at VIT</h1>
+            <p>why is VIVA important</p>
+        </div>
+
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+
+        <script>
+            $(document).ready(function(){
+                $(".tab").click(function(){
+                    const value = $(this).data('gram')
+
+                    //removing the active tab from all classes
+                    $(".tab").removeClass('active-tab')
+                    //adding active to the current class
+                    $(this).addClass('active-tab')
+
+                    //removing the active list from all the content divs
+                    $('.tab-content').removeClass('tab-content-active')
+                    $(`.tab-content[data-gram="${value}"]`).addClass('tab-content-active')
+                })
+            })
+        </script>
+    </body>
+
+
+
+</html>
+

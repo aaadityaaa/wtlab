@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Project Showcase</title>
+  <style>
+    /* Style for tabs */
+    .tabs {
+      display: flex;
+      list-style: none;
+      padding: 0;
+    }
+
+    .tab {
+      cursor: pointer;
+      padding: 10px 20px;
+      background-color: #eee;
+      border: 1px solid #ccc;
+      border-radius: 5px 5px 0 0;
+      margin-right: 5px;
+    }
+
+    .tab.active {
+      background-color: #fff;
+      border-bottom: 1px solid #fff;
+    }
+
+    /* Style for tab content */
+    .tab-content {
+      display: none;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 0 0 5px 5px;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container mt-5">
+  <h2 class="mb-4">Projects at VIT</h2>
+
+  <!-- Tabs -->
+  <ul class="tabs">
+    <li class="tab active" data-tab="sdp">SDP</li>
+    <li class="tab" data-tab="edi">EDI</li>
+    <li class="tab" data-tab="dt">DT</li>
+    <li class="tab" data-tab="course">Course Projects</li>
+  </ul>
+
+  <!-- Tab content -->
+  <div class="tab-content" data-tab="sdp">
+    <h4>Software Development Project (SDP)</h4>
+    <p>Description and details about SDP project.</p>
+  </div>
+  <div class="tab-content" data-tab="edi">
+    <h4>Entrepreneurship Development Internship (EDI)</h4>
+    <p>Description and details about EDI project.</p>
+  </div>
+  <div class="tab-content" data-tab="dt">
+    <h4>Design Thinking (DT)</h4>
+    <p>Description and details about DT project.</p>
+  </div>
+  <div class="tab-content" data-tab="course">
+    <h4>Course Projects</h4>
+    <p>Description and details about course projects at VIT.</p>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+
+<!-- JQuery script for toggleable tabs -->
+<script>
+  $(document).ready(function() {
+    $('.tab').on('click', function () {
+      const tab = $(this).data('tab');
+      
+      // Toggle active class for tabs
+      $('.tab').removeClass('active');
+      $(this).addClass('active');
+      
+      // Toggle active class for tab content
+      $('.tab-content').removeClass('active');
+      $(`.tab-content[data-tab="${tab}"]`).addClass('active');
+    });
+  });
+</script>
+
+</body>
+</html>

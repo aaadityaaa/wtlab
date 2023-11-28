@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Project Showcase</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container mt-5">
+  <h2 class="mb-4">Projects at VIT</h2>
+
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" id="projectTabs" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" id="sdp-tab" data-toggle="tab" href="#sdp" role="tab" aria-controls="sdp" aria-selected="true">SDP</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="edi-tab" data-toggle="tab" href="#edi" role="tab" aria-controls="edi" aria-selected="false">EDI</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="dt-tab" data-toggle="tab" href="#dt" role="tab" aria-controls="dt" aria-selected="false">DT</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="course-tab" data-toggle="tab" href="#course" role="tab" aria-controls="course" aria-selected="false">Course Projects</a>
+    </li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content mt-2">
+    <div class="tab-pane fade show active" id="sdp" role="tabpanel" aria-labelledby="sdp-tab">
+      <h4>Software Development Project (SDP)</h4>
+      <p>Description and details about SDP project.</p>
+    </div>
+    <div class="tab-pane fade" id="edi" role="tabpanel" aria-labelledby="edi-tab">
+      <h4>Entrepreneurship Development Internship (EDI)</h4>
+      <p>Description and details about EDI project.</p>
+    </div>
+    <div class="tab-pane fade" id="dt" role="tabpanel" aria-labelledby="dt-tab">
+      <h4>Design Thinking (DT)</h4>
+      <p>Description and details about DT project.</p>
+    </div>
+    <div class="tab-pane fade" id="course" role="tabpanel" aria-labelledby="course-tab">
+      <h4>Course Projects</h4>
+      <p>Description and details about course projects at VIT.</p>
+    </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<!-- JQuery script for toggleable tabs -->
+<script>
+  $(document).ready(function() {
+    $('#projectTabs a').on('click', function (e) {
+      e.preventDefault();
+      $(this).tab('show');
+    });
+  });
+</script>
+
+</body>
+</html>
